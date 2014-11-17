@@ -4,7 +4,7 @@ class MyClass
 	
 	def add(a, b);
 		return a+b;
-	end
+	end 
 end
 
 class Test_My < Minitest::Test

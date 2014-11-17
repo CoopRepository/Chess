@@ -1,4 +1,4 @@
-require "test/unit";
+require "minitest/autorun";
 
 class MyClass
 	
@@ -7,7 +7,7 @@ class MyClass
 	end
 end
 
-class Test_My < Test::Unit::TestCase
+class Test_My < Minitest::Test
 	
 	def test_add
 		ad = MyClass.new
