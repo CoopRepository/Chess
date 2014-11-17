@@ -8,11 +8,22 @@ class Piece
 	@x;
 	@y;
 	
+	@team;
+	
 	@display;
 
-	def initialize(x, y) #parameters when you create a piece it requires a x and a y cooderinate
+	def initialize(x, y, team) #parameters when you create a piece it requires a x, y cooderinate and if it is on the red or blue team
 		@x = x;
 		@y = y;
+		@is_team_red = team;
+	end
+	
+	def move(x, y) #move the piece to a certain location
+		
+	end
+	
+	def is_team_red()
+		return @is_team_red
 	end
 	
 	def get_disp() #get the display example: n for nothing
@@ -35,7 +46,6 @@ class Piece
 		@id = id;
 	end
 
-	o
 	def get_id() #getting the id of the piece
 		return @id;
 	end
