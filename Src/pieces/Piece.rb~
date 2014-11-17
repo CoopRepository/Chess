@@ -16,7 +16,7 @@ class Piece
 	end
 	
 	def get_disp()
-		return display;
+		return @display;
 	end
 	
 	def set_disp(disp)
