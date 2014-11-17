@@ -12,7 +12,7 @@ class Board
 	def initialize()		
 		@placement = "23465432 11111111 00000000 00000000 00000000 00000000 11111111 23465432";
 		 
-		#pieces   
+		#pieces  
 		@king = 6;
 		@queen = 5;
 		@bishop = 4;
