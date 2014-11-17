@@ -10,33 +10,33 @@ class Piece
 	
 	@display;
 
-	def initialize(x, y)
+	def initialize(x, y) #parameters when you create a piece it requires a x and a y cooderinate
 		@x = x;
 		@y = y;
 	end
 	
-	def get_disp()
+	def get_disp() #get the display example: n for nothing
 		return @display;
 	end
 	
-	def set_disp(disp)
+	def set_disp(disp) #sets the display for the piece
 		@display = disp;
 	end
 	
-	def get_x()
+	def get_x() #get pieces x coordinate and returns it
 		return @x;
 	end
 
-	def get_y()
+	def get_y() #get y coordinate
 		return @y;
 	end
 	
-	def set_id(id)
+	def set_id(id) #setting the id 
 		@id = id;
 	end
 
-	
-	def get_id()
+	o
+	def get_id() #getting the id of the piece
 		return @id;
 	end
 
