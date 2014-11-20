@@ -7,7 +7,7 @@ class Queen < Piece #saying queen is a piece
 		set_disp("q"); #setting display to q
 		@x = x; #setting x coordinate
 		@y = y; #setting y coordinate
-		@is_team_red = team;
+		@is_team_red = team; #setting team
 	end
 
 	def add(a, b)
