@@ -49,7 +49,7 @@ class Game
 			end
 			
 			
-			puts("You have selected a #{piece.get_disp()} piece on the #{@board.get_team(piece.is_team_red)}");
+			puts("You have selected a #{piece.get_disp()} piece on the #{@board.get_team(piece.is_team_red)} team");
 			
 			
 			#placement process

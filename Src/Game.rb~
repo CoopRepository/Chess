@@ -58,7 +58,7 @@ class Game
 			x = gets.chomp().to_i();
 			y = gets.chomp().to_i();
 			
-			@board.move(x, y);
+			piece.move(x, y);
 			
 			@board.print_board();
 		

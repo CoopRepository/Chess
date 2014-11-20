@@ -12,10 +12,11 @@ class Piece
 	
 	@display;
 
-	def initialize(x, y, team) #parameters when you create a piece it requires a x, y cooderinate and if it is on the red or blue team
+	def initialize(x, y, team, board) #parameters when you create a piece it requires a x, y cooderinate, if it is on the red or blue team, instance of Board.rb
 		@x = x;
 		@y = y;
 		@is_team_red = team;
+		@board = board;
 	end
 	
 	def move(x, y) #move the piece to a certain location
