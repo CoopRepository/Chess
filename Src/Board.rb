@@ -1,6 +1,6 @@
 #imports
-require "./pieces/King";
-require "./pieces/Queen";
+require "./pieces/King"
+require "./pieces/Queen"
 require "./pieces/Piece";
 require "./pieces/Pawn";
 

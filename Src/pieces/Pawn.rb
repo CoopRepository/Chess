@@ -32,7 +32,7 @@ class Pawn < Piece #pawn is a piece
 		
 		#begin:rescue block employed to handle null spaces in the board
 		begin
-			if(@board.get_piece(x, y).is_team_red() == @is_team_red) #checks if their is a
+			if(@board.get_piece(x, y).is_team_red() == @is_team_red) #checks if their is a freindly piece at coordinate space
 				puts("cannot move a pawn ontop of a freindly piece");
 				return false;
 			end
@@ -88,6 +88,8 @@ class Pawn < Piece #pawn is a piece
 		#if the movement passes all checks, set the coordinate of this piece to the desired point
 		@x = x;
 		@y = y;
+		
+		return true;
 	end
 
 	def add(a, b)

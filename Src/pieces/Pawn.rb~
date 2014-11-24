@@ -85,9 +85,11 @@ class Pawn < Piece #pawn is a piece
 			
 		end
 		
-		#if all 
+		#if the movement passes all checks, set the coordinate of this piece to the desired point
 		@x = x;
 		@y = y;
+		
+		return true;
 	end
 
 	def add(a, b)
