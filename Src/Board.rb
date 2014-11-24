@@ -65,35 +65,23 @@ class Board
 			puts(line) #prints 
 		end
 		
-		#Prints the board to console:
-		
-		for y in 0..7 #repeating 8 times
-			for x in 0..7
-				
-				#gets the id of each point
-				point =  @board[x + y * 8]
-				
-				#if the point is not nothing, print its name
-				if(point != -1)
-					print point.get_disp();
-				else 
-					#n is equal to nothing there
-					print "n"
-				end
-				
-			end
-			print "\n"  #spacing
-		end 
+		print_board();
 		
 	end
 
 	#prints the board to the screen
 	def print_board()
 		
+		#loop through the height of the board
 		for y in 0..7
+		
+			#loop through the width of the board
 			for x in 0..7
 					
+				#get each potential piece at a given coordinate point
 				piece = get_piece(x, y);
+				
+				#if a piece does not exist at the coordinate point, print null (see: get_piece)
 				if(piece == -1)
 					print "n"
 				else
@@ -114,17 +102,17 @@ class Board
 		when @king 
 		
 			#create a new King and add it to the board
-			@board.push(King.new(x, y, @team_red)); 
+			@board.push(King.new(x, y, @team_red, self)); 
 
 		when @queen
 			
 			#create a new Queen and add it to the board
-			@board.push(Queen.new(x, y, @team_red));
+			@board.push(Queen.new(x, y, @team_red, self));
 	
 		when @pawn
 		
 			#create a new Pawn
-			@board.push(Pawn.new(x, y, @team_red));
+			@board.push(Pawn.new(x, y, @team_red, self));
 		
 		else
 			
@@ -148,6 +136,11 @@ class Board
 		end
 		
 		return -1;
+		
+	end
+	
+	def remove_piece(piece)
+		@board.delete(piece);
 		
 	end
 	
