@@ -4,6 +4,8 @@ require "./pieces/Queen"
 require "./pieces/Piece";
 require "./pieces/Pawn";
 
+require "minitest/autorun"
+
 
 #The board is responsible for initializing the board
 
@@ -93,6 +95,7 @@ class Board
 		
 	end
 
+	
 	#Create a new piece based of the id provided
 	def create_piece(x, y, id) 
 	
