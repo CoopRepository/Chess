@@ -57,19 +57,10 @@ class Pawn < Piece #pawn is a piece
 		
 		if(xdist.abs == 1 and ydist.abs == 1) #checks if the pawn has moved diagonally
 		
-			begin #begin:rescue block used incase of null points
-				
-				#checks if the piece located is freindly
-				if(@board.get_piece(x, y).is_team_red() == @is_team_red)
-					puts("cannot move pawn diagonally onto freindly piece");
-					return false;
-				end
-		
-			rescue
-			
-				#if the piece is null, then the pawn cannot move diagonally
+			#tests if the piece at the coordinate point is null
+			if(@board.get_piece(x, y) == -1)
 				puts("cannot move pawn diagonally");
-				return false;
+				return false;	
 			end
 			
 			#IF A CAPTURE HAS OCCURED:

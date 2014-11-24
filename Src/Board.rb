@@ -53,8 +53,7 @@ class Board
 					next;
 				end
 				
-				puts(@xoffset);
-				puts("#{line[x].to_i}, #{x+=@xoffset}");
+
 				#gets the id at each coordinate
 				id = line[x+=@xoffset].to_i
 					

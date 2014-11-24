@@ -1,6 +1,6 @@
 #imports
-require "./pieces/King";
-require "./pieces/Queen";
+require "./pieces/King"
+require "./pieces/Queen"
 require "./pieces/Piece";
 require "./pieces/Pawn";
 
@@ -52,7 +52,7 @@ class Board
 				end
 				
 				puts(@xoffset);
-				puts("#{line[x].to_i}, #{x+=@xoffset}");
+
 				#gets the id at each coordinate
 				id = line[x+=@xoffset].to_i
 					
