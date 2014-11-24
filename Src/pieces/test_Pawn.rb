@@ -108,7 +108,7 @@ class Test_Pawn < Minitest::Test
 	def test_linear_move_team_blue
 		
 		pawn = @board.get_piece(@bt_x, @bt_y)
-		pawn_enemy = board.get_piece(@rt_x,@rt_y)
+		pawn_enemy = @board.get_piece(@rt_x,@rt_y)
 		pawn_enemy.move(0,2)
 		pawn_enemy.move(0,3)
 		pawn_enemy.move(0,4)
@@ -121,7 +121,7 @@ class Test_Pawn < Minitest::Test
 	
 	def test_horizontal_move_team_blue
 	
-		pawn = board.get_piece(@bt_x,@bt_y)
+		pawn = @board.get_piece(@bt_x,@bt_y)
 		pawn.move(0,5)
 		result = pawn.move(1, 5)
 		assert_equal false, result
