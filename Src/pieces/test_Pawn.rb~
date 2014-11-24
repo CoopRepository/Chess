@@ -101,7 +101,7 @@ class Test_Pawn < Minitest::Test
 	
 	def test_diagonal_move
 		
-		pawn = board.get_piece(@rt_x, @rt_y)
+		pawn = @board.get_piece(@rt_x, @rt_y)
 		result = pawn.move(1, 2)
 		assert_equal false, result
 	end

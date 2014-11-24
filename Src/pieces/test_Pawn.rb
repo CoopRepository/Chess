@@ -78,7 +78,6 @@ class Test_Pawn < Minitest::Test
 	
 		pawn = @board.get_piece(@rt_x, @rt_y)
 		
-		puts @bt_x, @bt_y
 		pawn_enemy = @board.get_piece(@bt_x, @bt_y);
 		pawn_enemy.move(0, 5)
 		pawn_enemy.move(0, 4)
