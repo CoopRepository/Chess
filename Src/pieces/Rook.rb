@@ -75,13 +75,13 @@ class Rook < Piece
 			
 			#remove the piece at said location
 			@board.remove_piece(piece);
+			
 			end
 		rescue
 		end
 		
 		@x = x;
 		@y = y;
-		
 		return true
 	end
 	
