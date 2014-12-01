@@ -1,9 +1,10 @@
 #imports
 require "./pieces/King"
 require "./pieces/Queen"
-require "./pieces/Piece";
-require "./pieces/Pawn";
-require "./pieces/Rook";
+require "./pieces/Piece"
+require "./pieces/Pawn"
+require "./pieces/Rook"
+require "./pieces/Knight.rb"
 
 require "minitest/autorun"
 
@@ -123,6 +124,11 @@ class Board
 			
 			#create a new Rook
 			@board.push(Rook.new(x, y, @team_red, self));
+		
+		when @knight
+		
+			#create a new knight
+			@board.push(Knight.new(x, y, @team_red, self));
 		
 		else
 			

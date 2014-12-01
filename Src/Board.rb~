@@ -1,10 +1,10 @@
 #imports
 require "./pieces/King"
 require "./pieces/Queen"
-require "./pieces/Piece";
-require "./pieces/Pawn";
-require "./pieces/Rook";
-
+require "./pieces/Piece"
+require "./pieces/Pawn"
+require "./pieces/Rook"
+require "./pieces/Knight.rb"
 require "minitest/autorun"
 
 
@@ -50,7 +50,7 @@ class Board
 				if(line[x] == "Y")
 					@team_red = true;
 					@xoffset = -1;
-					id =  line[7 + y * 7]
+					id =  line[6 + y * 7]
 					puts id
 					#create_piece(line.length,y, id);
 					next;
@@ -123,6 +123,11 @@ class Board
 			
 			#create a new Rook
 			@board.push(Rook.new(x, y, @team_red, self));
+		
+		when @knight
+		
+			#create a new knight
+			@board.push(Knight.new(x, y, @team_red, self));
 		
 		else
 			

@@ -8,7 +8,7 @@ class King < Piece #king is a piece
 		@x = x; #setting its x coordinate
 		@y = y; #setting its y coordinate
 		@is_team_red = team;
-		@board = board; 
+		@board = board; #passing the Board.rb instance
 	end
 
 	def add(a, b)
