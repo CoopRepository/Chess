@@ -50,7 +50,9 @@ class Board
 				if(line[x] == "Y")
 					@team_red = true;
 					@xoffset = -1;
-					puts @team_red;
+					id =  line[6 + y * 7]
+					puts id
+					#create_piece(line.length,y, id);
 					next;
 				end
 				

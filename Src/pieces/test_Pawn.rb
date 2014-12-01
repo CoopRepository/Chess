@@ -21,7 +21,7 @@ class Test_Pawn < Minitest::Test
 		#get a pawn the specified x y coordinate
 		pawn = @board.get_piece(@rt_x, @rt_y);
 		result = pawn.move(0, 2);
-		assert_equal  true, result;	
+		assert result;	
 		
 	end
 	
@@ -30,7 +30,7 @@ class Test_Pawn < Minitest::Test
 	
 		pawn = @board.get_piece(@bt_x, @bt_y)
 		result = pawn.move(0, 5)
-		assert_equal true, result
+		assert result
 		
 	end
 	
@@ -38,40 +38,31 @@ class Test_Pawn < Minitest::Test
 		
 		pawn = @board.get_piece(@rt_x, @rt_y)
 		result = pawn.move(0, 0)
-		assert_equal false, result	
+		assert !result
 		
 	end
 	
 	def test_incorrect_direction_team_blue
-		
 		pawn = @board.get_piece(@bt_x, @bt_y)
-		result = pawn.move(0, 7)
-		assert_equal false, result	
-		
+		assert !pawn.move(0, 7)
 	end
 	
 	def test_distance_check
 		
 		pawn = @board.get_piece(@rt_x, @rt_y)
-		result  = pawn.move(0, 5)
-		assert_equal false, result
+		assert !pawn.move(0, 5)
 		
 	end
 	
 	def test_friendly_check_team_red
-		
 		pawn = @board.get_piece(@rt_x, @rt_y)
-		result = pawn.move(1, 1)
-		assert_equal false, result
-		
+		assert !pawn.move(1, 1)
 	end
 	
 	def test_friendly_check_team_blue
 		
 		pawn = @board.get_piece(@bt_x,@bt_y)
-		result = pawn.move(1, 6)
-		assert_equal false, result
-		
+		assert !pawn.move(1, 6)
 	end
 	
 	def test_linear_move_team_red
@@ -84,8 +75,7 @@ class Test_Pawn < Minitest::Test
 		pawn_enemy.move(0, 3)
 		pawn_enemy.move(0, 2)
 		
-		result = pawn.move(0, 2)
-		assert_equal false, result
+		assert !pawn.move(0, 2)
 		
 	end
 	
@@ -93,16 +83,13 @@ class Test_Pawn < Minitest::Test
 		
 		pawn = @board.get_piece(@rt_x, @rt_y)
 		pawn.move(0, 2)
-		result = pawn.move(1, 2)
-		assert_equal false, result
-	
+		assert !pawn.move(1, 2)
 	end
 	
 	def test_diagonal_move
 		
 		pawn = @board.get_piece(@rt_x, @rt_y)
-		result = pawn.move(1, 2)
-		assert_equal false, result
+		assert !pawn.move(1, 2)
 	end
 	
 	def test_linear_move_team_blue
@@ -114,9 +101,7 @@ class Test_Pawn < Minitest::Test
 		pawn_enemy.move(0,4)
 		pawn_enemy.move(0,5)
 		
-		result = pawn.move(0,5)
-		assert_equal false, result
-	
+		assert !pawn.move(0,5)
 	end
 	
 	def test_horizontal_move_team_blue
@@ -137,8 +122,7 @@ class Test_Pawn < Minitest::Test
 		pawn_enemy.move(1, 3)
 		pawn_enemy.move(1, 2)
 		
-		result = pawn.move(1, 2)
-		assert_equal true, result
+		assert pawn.move(1, 2)
 		
 	end
 	
@@ -152,8 +136,7 @@ class Test_Pawn < Minitest::Test
 		pawn_enemy.move(1, 4)
 		pawn_enemy.move(1, 5)
 		
-		result = pawn.move(1, 5)
-		assert_equal true, result
+		assert pawn.move(1, 5)
 		
 	end
 end

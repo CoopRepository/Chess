@@ -3,6 +3,7 @@ require "./pieces/King"
 require "./pieces/Queen"
 require "./pieces/Piece";
 require "./pieces/Pawn";
+require "./pieces/Rook";
 
 require "minitest/autorun"
 
@@ -49,7 +50,9 @@ class Board
 				if(line[x] == "Y")
 					@team_red = true;
 					@xoffset = -1;
-					puts @team_red;
+					id =  line[7 + y * 7]
+					puts id
+					#create_piece(line.length,y, id);
 					next;
 				end
 				
