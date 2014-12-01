@@ -27,7 +27,7 @@ class Rook < Piece
 		dir = -1;
 		
 		if(xdist < 0 || ydist < 0)
-			dir = 1;
+			dir = 1
 		end
 		
 		#gets the number of spaces moved
@@ -66,7 +66,15 @@ class Rook < Piece
 				puts("Cannot move ontop of freindly piece")
 				return false
 			else
-				puts("capture")
+			
+			#gets the piece located at the coordinate point
+			piece = @board.get_piece(x, y);
+			
+			#print a read out to the user
+			puts("#{piece.get_disp()} on the #{@board.get_team(piece.is_team_red)} team at (#{x}, #{y}) has been captured");
+			
+			#remove the piece at said location
+			@board.remove_piece(piece);
 			end
 		rescue
 		end
@@ -74,6 +82,7 @@ class Rook < Piece
 		@x = x;
 		@y = y;
 		
+		return true
 	end
 	
 end
