@@ -19,6 +19,8 @@ class Test_Knight < Minitest::Test
 	def test_horzintal_incorrect_linear_movement
 		knight = @board.get_piece(@x, @y);
 		assert !knight.move(0, 3);
+	end	
+	
 	def test_incorrect_diagonal_movement
 		knight = @board.get_piece(@x, @y);
 		assert !knight.move(2, 1);
@@ -27,7 +29,7 @@ class Test_Knight < Minitest::Test
 	def test_colliding_friendly
 		knight = @board.get_piece(@x, @y);
 		assert !knight.move(3, 1);
-	end
+	
 	end
 	
 	
