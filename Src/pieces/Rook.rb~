@@ -82,7 +82,6 @@ class Rook < Piece
 		
 		@x = x;
 		@y = y;
-		print "HERHEHREHRH"
 		return true
 	end
 	
