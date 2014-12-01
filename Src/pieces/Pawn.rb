@@ -3,7 +3,7 @@ require "./pieces/Piece"
 class Pawn < Piece #pawn is a piece
 
 	def initialize(x, y, team, board) #what the paramters of a pawn are
-		set_id(1); #setting the value as 6
+		set_id(1); #setting the value as 1
 		set_disp("p") #its gonna display as k
 		@x = x; #setting its x coordinate
 		@y = y; #setting its y coordinate

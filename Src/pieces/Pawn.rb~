@@ -20,12 +20,12 @@ class Pawn < Piece #pawn is a piece
 		ydist = @y - y;
 		
 		#determine direction of movement is correct(i.e if the pawn on a certain team is moving the correct direction)
-		if((@is_team_red == true and ydist < 0) or (@is_team_red == false and ydist > 0))
+		if((@is_team_red == true and ydist < 0) || (@is_team_red == false and ydist > 0))
 			puts("cannot move pawn backwards");
 			return false;
 		end			
 		
-		if(ydist.abs > 1 or xdist.abs > 1) #checks if the distance the pawn has moved more than one space
+		if(ydist.abs > 1 || xdist.abs > 1) #checks if the distance the pawn has moved more than one space
 			puts("cannot move a pawn more than one space");
 			return false;
 		end
@@ -58,7 +58,7 @@ class Pawn < Piece #pawn is a piece
 		if(xdist.abs == 1 and ydist.abs == 1) #checks if the pawn has moved diagonally
 		
 			#tests if the piece at the coordinate point is null
-			if(@board.get_piece(x, y) == 0)
+			if(@board.get_piece(x, y) == -1)
 				puts("cannot move pawn diagonally");
 				return false;	
 			end

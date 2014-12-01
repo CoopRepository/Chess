@@ -4,6 +4,8 @@ require "./pieces/Queen"
 require "./pieces/Piece";
 require "./pieces/Pawn";
 
+require "minitest/autorun"
+
 
 #The board is responsible for initializing the board
 
@@ -51,7 +53,6 @@ class Board
 					next;
 				end
 				
-				puts(@xoffset);
 
 				#gets the id at each coordinate
 				id = line[x+=@xoffset].to_i
@@ -94,6 +95,7 @@ class Board
 		
 	end
 
+	
 	#Create a new piece based of the id provided
 	def create_piece(x, y, id) 
 	
@@ -113,6 +115,11 @@ class Board
 		
 			#create a new Pawn
 			@board.push(Pawn.new(x, y, @team_red, self));
+			
+		when @rook
+			
+			#create a new Rook
+			@board.push(Rook.new(x, y, @team_red, self));
 		
 		else
 			

@@ -3,6 +3,7 @@ require "./pieces/King"
 require "./pieces/Queen"
 require "./pieces/Piece";
 require "./pieces/Pawn";
+require "./pieces/Rook";
 
 require "minitest/autorun"
 
@@ -115,6 +116,11 @@ class Board
 		
 			#create a new Pawn
 			@board.push(Pawn.new(x, y, @team_red, self));
+			
+		when @rook
+			
+			#create a new Rook
+			@board.push(Rook.new(x, y, @team_red, self));
 		
 		else
 			
