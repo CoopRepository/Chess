@@ -1,3 +1,4 @@
+require "minitest/unit"
 require "minitest/autorun" #require the testing class
 require_relative "../Board"
 

@@ -9,6 +9,9 @@ class Test_Knight < Minitest::Test
 		#coordinate point for a red pawn
 		@x = 1;
 		@y = 0;
+		
+		@knight = @board.get_piece(@x, @y);
+		
 	end
 
 	def test_vertical_incorrect_linear_movement
@@ -37,6 +40,7 @@ class Test_Knight < Minitest::Test
 		knight = @board.get_piece(@x, @y);
 		assert knight.move(2, 2);
 	end
+	
 	def test_correct_movement_capture
 		knight = @board.get_piece(@x, @y);
 		knight.move(2,2)

@@ -1,0 +1,4 @@
+require "minitest/autorun" #require the testing class
+require "./test_Rook"
+
+

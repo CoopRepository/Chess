@@ -4,7 +4,8 @@ require "./pieces/Queen"
 require "./pieces/Piece"
 require "./pieces/Pawn"
 require "./pieces/Rook"
-require "./pieces/Knight.rb"
+require "./pieces/Knight"
+require "./pieces/Bishop"
 
 require "minitest/autorun"
 
@@ -67,10 +68,8 @@ class Board
 				
 			end 
 			
-			puts(line) #prints 
 		end
 		
-		print_board();
 		
 	end
 
@@ -129,6 +128,11 @@ class Board
 		
 			#create a new knight
 			@board.push(Knight.new(x, y, @team_red, self));
+			
+		when @bishop
+		
+			#create a new bishop
+			@board.push(Bishop.new(x, y, @team_red, self));
 		
 		else
 			

@@ -30,6 +30,8 @@ class Game
 		
 		puts("Welcome to ChessAwesomness! v1.0");
 		
+		@board.print_board()
+		
 		while @running do
 			
 			puts("Enter the x and y coord of the piece you want to move");
