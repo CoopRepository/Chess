@@ -56,7 +56,7 @@ class Knight < Piece
 			
 		end
 		
-		puts("The knight cannot move their!");
+		puts("The knight cannot move there!");
 		return false
 
 	end
