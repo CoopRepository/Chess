@@ -45,7 +45,7 @@ class Knight < Piece
 				
 				#print a read out to the user
 				puts("#{piece.get_disp()} on the #{@board.get_team(piece.is_team_red)} team at (#{x}, #{y}) has been captured");
-			
+			 
 				#remove the piece at said location
 				@board.remove_piece(piece);
 				
