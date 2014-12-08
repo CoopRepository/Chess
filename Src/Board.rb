@@ -76,6 +76,16 @@ class Board
 	#prints the board to the screen
 	def print_board()
 		
+		
+		for y in 0..7
+			print y
+		end
+		print "\n"
+		for y in 0..7
+			print "-"
+		end
+		print "\n"
+		
 		#loop through the height of the board
 		for y in 0..7
 		
@@ -93,7 +103,7 @@ class Board
 				end
 					
 			end
-			print "\n"
+			print "|#{y}\n"
 		end
 		
 	end

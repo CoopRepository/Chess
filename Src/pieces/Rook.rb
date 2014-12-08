@@ -30,7 +30,7 @@ class Rook < Piece
 			dir = 1
 		end
 		
-		#gets the number of spaces moved
+		#gets the number of spaces moved 
 		move = [xdist.abs, ydist.abs].max-1
 		
 		if(xdist.abs > ydist.abs)
