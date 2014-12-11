@@ -16,19 +16,139 @@ class Queen < Piece #queen is a piece
 		@xdist = @x - x
 		@ydist = @y - y
 		
-		check_move
+		if !check_move
+			return false
+		end
+		
+		if @diagonal
+			if !check_diagonal
+				return false
+			end
+		else
+			if !check_linear
+				return false
+			end
+		end
+		
+		if !check_enemy(x, y)
+			return false
+		end
 		
 		@x = x
 		@y = y
+	end
+	
+	#returns false if ontop of friendly
+	def check_enemy(x, y)
+		
+		if(@board.get_piece(x, y) == -1) 
+			return true
+		end
+		
+		if(@board.get_piece(x, y).is_team_red() != @is_team_red)
+			#gets the piece located at the coordinate point
+			piece = @board.get_piece(x, y);
+			
+			#print a read out to the user
+			puts("#{piece.get_disp()} on the #{@board.get_team(piece.is_team_red)} team at (#{x}, #{y}) has been captured");
+			
+			#remove the piece at said location
+			@board.remove_piece(piece);
+			return true
+		end
+		
+		puts("cannot move on top of friendly piece")
+		return false
+		
+	end
+	
+	def check_linear
+		dir = -1;
+		
+		if(@xdist < 0 || @ydist < 0)
+			dir = 1
+		end
+		
+		#gets the number of spaces moved 
+		move = [@xdist.abs, @ydist.abs].max-1
+		
+		if(@xdist.abs > @ydist.abs)
+
+			#Horizontal move:
+			
+			for i in 1..move
+				x_cord = @x + i * dir;
+				puts x_cord
+				if(@board.get_piece(x_cord, @y) != -1)
+					puts("Move not possible")
+					return false
+				end
+			end
+			
+		else
+			
+			#verticle move
+			
+			for i in 1..move
+				y_cord = @y + i * dir;
+				
+				if(@board.get_piece(@x, y_cord) != -1)
+					puts("Move not possible")
+					return false
+				end
+			end
+			
+		end
+		
+		return true
+	end
+	
+	def check_diagonal
+		dist = @xdist.abs;
+		
+		ydir = 1;
+		xdir = 1;
+		
+		if(@ydist > 0)
+			ydir = -1;
+		end
+	
+		if(@xdist > 0)
+			xdir = -1
+		end
+		
+		for i in 1..dist-1
+			xmove = @x + i*xdir
+			ymove = @y + i*ydir
+
+			if(@board.get_piece(xmove, ymove) == -1)
+				next
+			end	
+
+			puts("Move not possible")
+			return false			
+			
+		end	
+		
+		return true
 	end
 
 	def check_move
 		
 		#check horizontal/verticle movement
 		if( (@xdist.abs > 0 and @ydist == 0) || (@ydist.abs > 0 and @xdist == 0) )
-			puts "here"
+			@diagonal = false
+			return true
 		end
 		
+		#check diagonal movement
+		if (@xdist.abs == @ydist.abs)
+			@diagonal = true
+			return true
+		end
+		
+		puts "cannot move queen there"
+		return false
 	end
 	
 
