@@ -52,6 +52,8 @@ class Knight < Piece
 				@x = x;
 				@y = y;
 				return true;
+				
+				
 			end
 			
 		end

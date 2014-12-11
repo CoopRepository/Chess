@@ -10,9 +10,26 @@ class Queen < Piece #queen is a piece
 		@is_team_red = team;
 		@board = board; 
 	end
-
-	def add(a, b)
-  		return a + b;
+	
+	def move(x, y)
+	
+		@xdist = @x - x
+		@ydist = @y - y
+		
+		check_move
+		
+		@x = x
+		@y = y
 	end
+
+	def check_move
+		
+		#check horizontal/verticle movement
+		if( (@xdist.abs > 0 and @ydist == 0) || (@ydist.abs > 0 and @xdist == 0) )
+			puts "here"
+		end
+		
+	end
+	
 
 end
