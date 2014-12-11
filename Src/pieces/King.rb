@@ -11,8 +11,11 @@ class King < Piece #king is a piece
 		@board = board; #passing the Board.rb instance
 	end
 
-	def add(a, b)
-  		return a + b;
+	def move(x, y)
+		
+		
+		@x = x;
+		@y = y;
 	end
 
 end

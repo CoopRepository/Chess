@@ -47,7 +47,7 @@ class Test_Queen < Minitest::Test
 		queen = @board.get_piece(@x, @y);
 		pawn.move(5,2)
 		queen.move(6,2)
-		assert queen.move(2,6)
+		queen.move(2,6)
 	end
 	
 end
